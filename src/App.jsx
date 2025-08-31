@@ -11,7 +11,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
-        <Route index element={<Navigate to={"categories"} replace />} />
+        <Route index element={<Navigate to={"search"} replace />} />
         <Route path="categories" element={<Category />} />
         <Route path="start-items" element={<StartItem />} />
         <Route path="origin" element={<Origin />} />
