@@ -67,3 +67,15 @@ export const search = async (text) => {
     console.log(err);
   }
 };
+
+export const recomondRecipes = async (text) => {
+  try {
+    const res = await axios.get(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian`
+    );
+
+    return res.data.meals;
+  } catch (err) {
+    console.log(err);
+  }
+};

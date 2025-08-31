@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAll } from "../context/allContext";
-import { search } from "../api";
+import { recomondRecipes, search } from "../api";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
 import NoResults from "./NoResults";
@@ -15,6 +15,16 @@ export default function Search() {
     return () => {
       document.title = "Recipe Book";
     };
+  }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    async function fetchData() {
+      const res = await recomondRecipes();
+      setSearchedList(res);
+      setLoading(false);
+    }
+    fetchData();
   }, []);
 
   function handleChange(e) {

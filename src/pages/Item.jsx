@@ -71,7 +71,6 @@ function Item() {
         <ul class="grid grid-cols-2 gap-4 text-gray-700">
           {ingredient?.length > 0 &&
             ingredient?.map((el, i) => {
-              console.log(el);
               return (
                 <li className="text-xs sm:text-sm md:text-lg" key={i}>
                   <span class="font-bold text-teal-600">{el?.name}</span> -
