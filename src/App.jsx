@@ -6,6 +6,7 @@ import Origin from "./pages/Origin";
 import List from "./pages/List";
 import Item from "./pages/Item";
 import Search from "./component/Search";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="item/:id" element={<Item />} />
         <Route path="search" element={<Search />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
